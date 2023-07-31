@@ -22,7 +22,6 @@ const EditComponent: React.FC = () => {
   const params = useParams<EditParams>();
   const { id } = params;
 
-  // Handle the case when id is undefined or not a valid number
   const parsedId = id ? parseInt(id, 10) : undefined;
   const isValidId = !isNaN(parsedId as number);
 

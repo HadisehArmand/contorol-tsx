@@ -1,7 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import axios from "axios";
 import { useUserStore, User } from "../userStore";
-// Import the Zustand hook and User interface
 import "./login.css";
 import useLogStore from "../addlogsys";
 
@@ -158,7 +157,6 @@ const Edit: React.FC<EditProps> = (props) => {
             />
           </div>
         </div>
-        {/* ... and the rest of the inputs ... */}
         <div className="row d-flex justify-content-center">
           <div className="col-6 d-flex justify-content-evenly">
             <input

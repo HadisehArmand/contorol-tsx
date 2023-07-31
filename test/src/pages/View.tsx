@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import { useUserStore, User } from '../userStore'; // Import the Zustand hook and User interface
-import './login.css';
-import useLogStore from '../addlogsys';
+import React, { useEffect } from "react";
+import axios from "axios";
+import { useUserStore, User } from "../userStore";
+import "./login.css";
+import useLogStore from "../addlogsys";
 
 const View: React.FC = () => {
-  const {addLog,logs} = useLogStore()
-  const {
-    users,
-    setUsers,
-  } = useUserStore();
+  const { addLog, logs } = useLogStore();
+  const { users, setUsers } = useUserStore();
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await axios.get<User[]>(
@@ -18,7 +15,7 @@ const View: React.FC = () => {
       setUsers(response.data);
     };
     fetchUsers();
-    addLog("view user","ok")
+    addLog("view user", "ok");
   }, [setUsers]);
 
   const renderUser = () => {
